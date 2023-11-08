@@ -8,12 +8,12 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .rotate {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -35,4 +35,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+   
+.App-button {
+  color: blue;
+  font-size: 1.5rem;
 }
