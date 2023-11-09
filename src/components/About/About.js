@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import './About.css';
 
-function About() {
-
+function About () {
     return (
+
+
         <div className="container">
-            <h2> Page About </h2>
-        </div>
+            <h2>Page About</h2>
+            </div>
     );
 }
+
 export default About;

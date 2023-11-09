@@ -42,3 +42,8 @@
   color: blue;
   font-size: 1.5rem;
 }
+
+.App {
+  align-items: center;
+  justify-content: center;
+}
