@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Home/Home.js';
 import { useState } from 'react';
 import App from './About/About';
+import App from './components/Layout/Layout';
 function App() {
 
   const [animation, setAnimation] = useState(true)
@@ -18,8 +19,9 @@ function App() {
     <div className="App">
       <Home />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+      <Route path="/" element={<Layout />}/>
+      <Route index element={<Home />} />
+      <Route path="/about" element={<About />} />
       </Routes>
 
       <header className="App-header">
