@@ -25,7 +25,7 @@ function List() {
             <p>{data}</p>
             {films.map((film, index) => (
                 <div key={index}>
-                    <img src={film.poster_path} alt={`Poster du film ${index + 1}`} />
+                    <img src={film.poster_path} alt="{`Poster du film ${index + 1}`}" />
                     <p>{film.overview}</p>
                 </div>
             ))}
