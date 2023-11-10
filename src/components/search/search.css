@@ -1,0 +1,18 @@
+.search {
+    padding: 5px 20px;
+}
+
+.search fieldset {
+    margin: 20 px 0px
+}
+
+.search label {
+    display: block;
+}
+
+.search input {
+
+    margin-left: 100px;
+    font-size: 1.4rem;
+}
+  

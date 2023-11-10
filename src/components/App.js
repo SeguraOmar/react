@@ -3,8 +3,8 @@ import './App.css';
 import Layout from './layout/Layout';
 import Home from './Home/Home';
 import About from './About/About';
-// import Search from './Search/Search';
-// import List from './List/List';
+import Search from './search/search';
+import List from './List/List';
 
 function App() {
 
@@ -14,8 +14,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/about/:data" element={<About />} />
-          {/* <Route path="/search" element={<Search />} /> */}
-          {/* <Route path="/list/:data" element={<List />} /> */}
+          <Route path="/search" element={<Search />} />
+          <Route path="/list/:data" element={<List />} />
         </Route>
       </Routes>
     </div>
