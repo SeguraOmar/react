@@ -1,37 +1,32 @@
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 import './List.css';
-import { useEffect, useState } from 'react';
+import Film from '../Film/Film';
+import '../../TMDBApi.js';
 import { getFilmsFromTMdbWidthText } from '../../TMDBApi.js';
 
 function List() {
-    const { data } = useParams();
 
-    const [films, setFilms] = useState([]);
+const [films, setFilms] = useState([])
 
-    useEffect(() => {
-        getFilmsFromTMdbWidthText(data, 1)
-            .then(response => {
-                console.log(response.results);
-                setFilms(response.results);
-            })
-            .catch(error => {
-                console.error("Error fetching films:", error);
-            });
-    }, [data]);
+  const search = useParams()
 
-    return (
-        <div className="film">
-            <h2>Liste des films</h2>
-            <p>{data}</p>
-            {films.map((film, index) => (
-                <div key={index}>
-                    <img src={film.poster_path} alt="{`Poster du film ${index + 1}`}" />
-                    <p>{film.overview}</p>
-                </div>
-            ))}
-        </div>
-    );
+useEffect(() => {
+    getFilmsFromTMdbWidthText(search.data, 1)
+    .then(data => {setFilms(data.results)})
+  
+})
+
+  return (
+    <div className="container">
+      <h2>Liste des films</h2>
+      <p>{search.data}</p>
+      {films.map((film) => {
+        return (
+        <Film key={film.id} poster={film.poster_path} abstract={film.overview} />
+     ) })}
+    </div>
+  );
 }
 
 export default List;
-
